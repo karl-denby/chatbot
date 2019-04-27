@@ -8,3 +8,6 @@ config = Config(".env")
 
 # Define settings here.
 # See: https://www.starlette.io/config/
+CORS = True
+
+static_dir = 'dist'
