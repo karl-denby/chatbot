@@ -1,11 +1,16 @@
 """Application definition."""
-from bocadillo import App, discover_providers
-from .bot import diego
+from bocadillo import App, discover_providers, Templates
 
 app = App()
 discover_providers("chatbot.providerconf")
+templates = Templates(app, directory='dist')
+
 
 # Create routes here.
+@app.route('/')
+async def index(req, res):
+    res.html = await templates.render("index.html")
+
 @app.websocket_route("/conversation")
 async def converse(ws, diego, save_client):
     async for message in ws:
