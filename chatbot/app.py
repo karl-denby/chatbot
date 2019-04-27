@@ -1,10 +1,9 @@
 """Application definition."""
-from bocadillo import App, discover_providers, Templates
+from bocadillo import App, discover_providers, Templates, static
 
 app = App()
 discover_providers("chatbot.providerconf")
 templates = Templates(app, directory='dist')
-
 
 # Create routes here.
 @app.route('/')
