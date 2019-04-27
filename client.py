@@ -13,6 +13,6 @@ async def client(url: str):
 
 
 with suppress(KeyboardInterrupt):
-    # 3.7+. See asyncio docs for <3.7 usage.
+    # 3.6. See asyncio docs for >3.7 usage.
         asyncio.get_event_loop().create_task(client("ws://localhost:8000/conversation"))
         asyncio.get_event_loop().run_forever()
