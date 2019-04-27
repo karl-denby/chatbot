@@ -4,6 +4,8 @@ from bocadillo import App, discover_providers, Templates, static
 app = App()
 discover_providers("chatbot.providerconf")
 templates = Templates(app, directory='dist')
+app.mount(prefix='js', app=static('dist/js'))
+app.mount(prefix='css', app=static('dist/css'))
 
 # Create routes here.
 @app.route('/')
