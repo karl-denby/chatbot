@@ -29,11 +29,13 @@ uvicorn chatbot.asgi:app
 To enable hot reload, use the `--reload` option. The server will run at `http://localhost:8000`.
 
 ### Start the cli client:
+
 ```bash
 python client.py
 ```
 
 ### Sample chat
+
 ```
 > Hi
 Hello
@@ -56,3 +58,7 @@ Good.
 > 
 
 ```
+
+### Front End
+
+Place you built project in the `./dist` folder
